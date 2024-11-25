@@ -33,13 +33,6 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -62,7 +55,7 @@
                         <p>En CompuTech contamos con un equipo técnico especializado que no solo te brindará asistencia a usuarios a domicilio, a nivel de hardware y software, sino también de manera remota, ya sea por demanda o por contrato.</p>
                     </div>
                     <div class="col-md-4">
-                        <a href="https://web.whatsapp.com/" class="btn btn-primary w-100 mb-3" target="_blank">Solicitar Servicio</a>
+                        <a href="{{route('servicios.nuevoServicio')}}" class="btn btn-primary w-100 mb-3">Solicitar Servicio</a>
 
                         <div class="card">
                             <div class="card-header bg-primary text-white text-center">

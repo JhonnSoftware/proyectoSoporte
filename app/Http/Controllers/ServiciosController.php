@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ServiciosController extends Controller
 {
-    public function NuevoServicio(){
-        return view('nuevoServicio');
+    public function generarTicket(){
+        return view('servicios.generarTicket');
     }
 }
