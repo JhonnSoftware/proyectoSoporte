@@ -50,7 +50,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
 
    Route::controller(ServiciosController::class)->group(function () {
-        Route::get('generarTicket', 'generarTicket')->name('servicios.generarTicket');
+        Route::get('/generarTicket', 'generarTicket')->name('servicios.generarTicket');
+        Route::post('/generarTicket', 'store')->name('generarTicket.store');
    }); 
 
 });

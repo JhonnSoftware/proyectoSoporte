@@ -34,13 +34,14 @@
                     <button class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
                 </div>
             </div>
-
-            <form class="contact-form" method="">
+            
+            <form class="contact-form" method="POST" action="{{ route('generarTicket.store') }}">
+                @csrf
                 <h3>* Campos obligatorios</h3>
-                <input type="text" placeholder="Ingrese su nombre completo*" required>
-                <input type="tel" placeholder="Telefono *" required>
-                <input type="tel" placeholder="Correo *" required>
-                <textarea placeholder="Asunto"></textarea>
+                <input type="text" name="nombre" placeholder="Ingrese su nombre completo*" required>
+                <input type="tel" name="telefono" placeholder="Telefono *" required>
+                <input type="tel" name="correo" placeholder="Correo *" required>
+                <textarea name="asunto" placeholder="Asunto"></textarea>
                 <label for="archivo" class="file-label">Adjuntar archivo (opcional):</label>
                 <input type="file" name="archivo" id="archivo" class="file-input" accept="image/*,.pdf,.doc,.docx">
                 <button type="submit">Generar Ticket</button>
