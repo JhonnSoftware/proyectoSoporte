@@ -11,19 +11,6 @@
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Botón azul para "Contactanos" */
-    .blue-button {
-        background-color: #0d6efd; /* Azul noche */
-        color: white;
-        border: 1px solid #0d6efd;
-        margin: 8px 0;
-    }
-
-    .blue-button:hover {
-        background-color: #122244; /* Azul más oscuro */
-        color: #e6e6e6; /* Texto más claro */
-    }
-
     /* Botón verde para "WhatsApp" */
     .green-button {
         background-color: #22c55e; /* Verde WhatsApp */
@@ -39,6 +26,15 @@
         color: #e6e6e6; /* Texto más claro */
     }
 
+    .custom-nav-link{
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    .custom-slot-link{
+        text-decoration: none;
+        font-size: 14px;
+    }
 </style>
 
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
@@ -55,35 +51,33 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('Productos')" :active="request()->routeIs('Productos')">
-                        {{ __('Productos') }}
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="custom-nav-link">
+                        {{ __('INICIO') }}
                     </x-nav-link>
 
                     <!-- Add About Us -->
-                    <x-nav-link :href="route('SobreNosotros')" :active="request()->routeIs('SobreNosotros')">
-                        {{ __('Sobre Nosotros') }}
+                    <x-nav-link :href="route('SobreNosotros')" :active="request()->routeIs('SobreNosotros')" class="custom-nav-link">
+                        {{ __('NOSOTROS') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('NuestrosServicios')" :active="request()->routeIs('NuestrosServicios')" class="custom-nav-link">
+                        {{ __('NUESTROS SERVICIOS') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('Productos')" :active="request()->routeIs('Productos')" class="custom-nav-link">
+                        {{ __('PRODUCTOS') }}
                     </x-nav-link>
 
                     <!-- Botón Contactanos -->
-                    <x-nav-link :href="route('Contactanos')" :active="request()->routeIs('Contactanos')" class="custom-button blue-button">
-                        {{ __('Contactanos') }}
+                    <x-nav-link :href="route('Contactanos')" :active="request()->routeIs('Contactanos')" class="custom-nav-link">
+                        {{ __('CONTACTENOS') }}
                     </x-nav-link>
 
                     <!-- Botón WhatsApp -->
                     <x-nav-link href="https://web.whatsapp.com/" target="_blank" class="custom-button green-button">
-                        {{ __('WhatsApp') }}
+                        {{ __('ENVIANOS UN MENSAJE') }}
                     </x-nav-link>
 
-                    <!-- Botón Administración: Solo visible para administradores -->
-                    @if(auth()->user() && auth()->user()->role === 'admin')
-                        <x-nav-link :href="route('Administracion')" class="custom-button blue-button">
-                            {{ __('Administración') }}
-                        </x-nav-link>
-                    @endif
                 </div>
 
             </div>
@@ -104,8 +98,8 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                        <x-dropdown-link :href="route('profile.edit')" class="custom-slot-link">
+                            {{ __('Perfil') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -114,10 +108,15 @@
 
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                                this.closest('form').submit();" class="custom-slot-link">
                                 {{ __('Cerrar Sesion') }}
                             </x-dropdown-link>
                         </form>
+                        @if(auth()->user() && auth()->user()->role === 'admin')
+                            <x-dropdown-link :href="route('Administracion')" class="custom-slot-link">
+                                {{ __('Administración') }}
+                            </x-dropdown-link>
+                        @endif
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -140,6 +139,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            
         </div>
 
         <!-- Responsive Settings Options -->

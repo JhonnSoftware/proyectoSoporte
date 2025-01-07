@@ -7,6 +7,7 @@ use App\Models\Ticket;
 
 class ServiciosController extends Controller
 {
+    
     public function generarTicket(){
         return view('servicios.generarTicket');
     }
@@ -27,4 +28,6 @@ class ServiciosController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Formulario enviado correctamente');
     }
+
+
 }

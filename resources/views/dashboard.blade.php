@@ -2,52 +2,26 @@
     
     <!DOCTYPE html>
     <html lang="en">
+
         <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <meta name="description" content="" />
             <meta name="author" content="" />
-            <title>Shop Homepage - Start Bootstrap Template</title>
+            <title>Inicio</title>
             <!-- Favicon-->
             <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
             <!-- Bootstrap icons-->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
             <!-- Core theme CSS (includes Bootstrap)-->
             <link href="css/styles.css" rel="stylesheet" />
+            <link rel="stylesheet" href="{{asset('/public/css/styles.css')}}">
         </head>
+
         <body>
-            <!-- Navigation-->
-            <!--
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container px-4 px-lg-5">
-                    <a class="navbar-brand" href="#!">COMPUTECH</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Servicios</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#!">Sobre Nosotros</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                    <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="d-flex">
-                            <button class="btn btn-outline-dark" type="submit">
-                                <i class="bi-cart-fill me-1"></i>
-                                Cart
-                                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </nav> -->
             <!-- Header-->
-            <header class="bg-dark py-5">
+            <header class="custom-header">
+                <div class="overlay"></div>
                 <div class="container px-4 px-lg-5 my-5">
                     <div class="text-center text-white">
                         <h1 class="display-4 fw-bolder">Servicio de soporte tecnico</h1>
@@ -55,12 +29,13 @@
                     </div>
                 </div>
             </header>
+            
             <!-- Section-->
             <section class="py-5">
                 <div class="container d-flex">
                     <div class="row">
                         <div class="col-md-8">
-                            <img src="{{ asset('imagenes/imagen01.png') }}" width="800" height="500">
+                            <img src="{{ asset('img/imagen01.png') }}" width="800" height="500">
                             <h3 class="mt-4">¿TIENES PROBLEMAS TÉCNICOS EN TU EMPRESA?</h3>
                             <p>En CompuTech contamos con un equipo técnico especializado que no solo te brindará asistencia a usuarios a domicilio, a nivel de hardware y software, sino también de manera remota, ya sea por demanda o por contrato.</p>
                         </div>
@@ -87,7 +62,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="{{ asset('imagenes/soporte03.png')}}" class="card-img-top" alt="Soporte técnico presencial y/o remoto">
+                                <img src="{{ asset('img/soporte03.png')}}" class="card-img-top" alt="Soporte técnico presencial y/o remoto">
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h5 class="card-title text-white bg-dark p-2 rounded">Soporte técnico a domicilio</h5>
                                 </div>
@@ -95,7 +70,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="{{ asset('imagenes/mantenimiento02.jpg') }}" class="card-img-top" alt="Mantenimiento de equipos">
+                                <img src="{{ asset('img/mantenimiento02.jpg') }}" class="card-img-top" alt="Mantenimiento de equipos">
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h5 class="card-title text-white bg-dark p-2 rounded">Mantenimiento de Equipos</h5>
                                 </div>
@@ -103,7 +78,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="{{ asset('imagenes/redes02.jpg') }}" class="card-img-top" alt="Soporte y mantenimiento de redes">
+                                <img src="{{ asset('img/redes02.jpg') }}" class="card-img-top" alt="Soporte y mantenimiento de redes">
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h5 class="card-title text-white bg-dark p-2 rounded">Soporte técnico y mantenimiento de redes</h5>
                                 </div>
@@ -117,26 +92,34 @@
             </section>
             
             <!-- Footer-->
-            <footer class="py-5 bg-dark">
-                <div class="container text-center text-white">
-                    <!-- Título del Footer -->
-                    <h5 class="mt-4 mb-4 font-weight-bold">Números de Contacto de Soporte Técnico</h5>
-            
-                    <!-- Sección de Números de Contacto -->
-                    <ul class="list-inline">
-                        <li class="list-inline-item mx-3">
-                            <span class="contact-icon">📞</span> <span class="contact-number">906718092</span>
-                        </li>
-                        <li class="list-inline-item mx-3">
-                            <span class="contact-icon">📞</span> <span class="contact-number">947423534</span>
-                        </li>
-                        <li class="list-inline-item mx-3">
-                            <span class="contact-icon">📞</span> <span class="contact-number">912276033</span>
-                        </li>
-                        <li class="list-inline-item mx-3">
-                            <span class="contact-icon">📞</span> <span class="contact-number">900690382</span>
-                        </li>
+            <footer class="footer">
+                <div class="footer-section">
+                    <h3>Soporte PC</h3>
+                    <p>
+                        Somos especialistas en soporte técnico integral. En Soporte PC nos 
+                        preocupamos en brindarle un servicio eficiente con la misma calidad y 
+                        seguridad que nos gustaría tener.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Nuestros Servicios</h3>
+                    <ul>
+                        <li><a href="#">Soporte técnico para empresas</a></li>
+                        <li><a href="#">Mantenimiento de equipos</a></li>
+                        <li><a href="#">Reparación de equipos</a></li>
+                        <li><a href="#">Cableado estructurado</a></li>
+                        <li><a href="#">Soporte a domicilio</a></li>
+                        <li><a href="#">Venta de equipos</a></li>
                     </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contáctenos</h3>
+                    <p>¿Tiene problemas técnicos con sus equipos de cómputo?</p>
+                    <p>
+                        📍 Calle Mercaderes 368, Oficina 401, Santiago de Surco, Lima, Perú<br>
+                        📞 +51 1 480 1025<br>
+                        📧 <a href="mailto:informes@soportepc.pe">informes@soportepc.pe</a>
+                    </p>
                 </div>
             </footer>
             
@@ -145,6 +128,102 @@
             <!-- Core theme JS-->
             <script src="js/scripts.js"></script>
         </body>
+
+        <style>
+            .custom-header {
+                background-image: url('{{ asset('img/header01.jpg') }}');
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 5rem 0;
+            }
+            
+            .custom-header .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6); 
+                z-index: 1; 
+            }
+
+            .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            .text-container {
+                text-align: center;
+                color: #ffffff; 
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px 50px;
+                background-color: #1e1e1e;
+            }
+
+            .footer-section {
+                flex: 1;
+                margin: 20px 20px;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: #f5f5f5;
+            }
+
+            .footer-section p {
+                font-size: 0.9rem;
+                line-height: 1.8;
+                color: #b0b0b0;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding-left: 20px;
+            }
+
+            .footer-section ul li {
+                position: relative;;
+            }
+
+            .footer-section ul li a {
+                color: #d4d4d4;
+                text-decoration: none;
+                font-size: 0.9rem;
+                padding-left: 20px;
+            }
+
+            .footer-section ul li a::before {
+                content: "•"; /* El punto antes del enlace */
+                color: #FFF; /* Color del punto */
+                font-size: 1.5rem; /* Tamaño del punto */
+                position: absolute; /* Posiciona el punto de forma absoluta */
+                left: 0; /* Coloca el punto a la izquierda */
+                top: 50%; /* Centra el punto verticalmente */
+                transform: translateY(-50%); /* Ajusta para centrar perfectamente */
+            }
+
+            .footer-section ul li a:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            .footer-section a {
+                color: #d4d4d4;
+                text-decoration: none;
+            }
+
+            .footer-section a:hover {
+                text-decoration: underline;
+            }
+        </style>
+
     </html>
 
 </x-app-layout>
